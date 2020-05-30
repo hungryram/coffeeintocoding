@@ -183,7 +183,7 @@ body h6.subtitle {
     font-family: 'Raleway', sans-serif;
 }
 
-.fa-facebook-f {
+/* .fa-facebook-f {
     color: #506dab!important;
 }
 
@@ -205,7 +205,7 @@ i.fab.fa-instagram {
 
 .fa-youtube {
     color: #be0303;
-}
+} */
 
 p,
 li,
@@ -452,6 +452,10 @@ div.socialheader ul li {
     padding: 0 10px;
 }
 
+div.socialheader ul li i {
+    color: #fff;
+}
+
 .navbar-end {
     align-items: center!important;
 }
@@ -545,7 +549,7 @@ section.hero__container {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.35);
 }
 
 
