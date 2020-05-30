@@ -1,43 +1,5 @@
 <div class="column">
     <div class="box">
-        <h2 class="subtitle is-6">Recent Listings<h2>
-            {{ range first 4 (where $.Site.RegularPages "Type" "listings") }}
-              <article class="media">
-                {{ if .Params.photos.main_photo }}
-                <div class="media-left">
-                  <figure class="image is-96x96">
-                    <img src="{{ .Params.photos.main_photo }}" alt="Image">
-                  </figure>
-                </div>
-                {{ else }}
-                <div class="media-left">
-                  <figure class="image is-96x96">
-                    <img src="http://www.hungryram.com/uploads/nophotohouse.jpg" alt="Image">
-                  </figure>
-                </div>
-                {{end}}
-                <div class="media-content">
-                  <div class="content">
-                      <h1 class="title is-6" style="margin: 2px">{{ .Params.short_description }} ({{ .Params.status }})</h1>
-                      <h4 class="subtitle is-6" style="margin:2px">${{ .Params.pricing.price }}</h4>
-                      <a href="{{ .Permalink }}" class="secondary-btn">More Info</a>
-                </div>
-            </article>
-            {{end}}
-    </div>
-
-    <div class="box">
-      <h2 class="subtitle is-6">Blog Categories</h2>
-        <ul>
-            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-          <li>
-            <i class="fas fa-angle-right" style="margin-right: 10px"></i><a href="/categories{{ $name | urlize | relURL }}" class="secondary-btn">{{ $name | humanize }} ({{ $taxonomy.Count }})</a>
-          </li>
-          {{end}}
-
-        </ul>
-    </div>
-    <div class="box">
         <h2 class="subtitle is-6">Latest Posts<h2>
 
         {{ range  first 4 ( where $.Site.RegularPages "Type" "blog") }}
