@@ -17,7 +17,7 @@ main_image:
     open_in_new_tab: false
     hero_button_text_color: "#000000"
     hero_button_bg_color: "#ffffff"
-  add_mp4_link: https://hungryram.s3-us-west-1.amazonaws.com/ocean.mp4
+  add_mp4_link: https://player.vimeo.com/video/203443194?title=0&portrait=0&byline=0&autoplay=1
   add_youtube_background_video: false
 home_sections:
 - template: intro
