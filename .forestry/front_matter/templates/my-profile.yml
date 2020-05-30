@@ -38,27 +38,6 @@ fields:
     label: Email
     description: Please contact the <a href="https://hungryram.com" title="" target="_blank">developer
       </a>if you need to change email notifications.
-  - name: license_type
-    type: select
-    default: []
-    config:
-      required: false
-      options:
-      - DRE License
-      - BRE License
-      - License Number
-      - Licensed Real Estate Broker
-      source:
-        type: simple
-        section: 
-        file: 
-        path: 
-    label: License Type
-  - name: license_number
-    type: text
-    config:
-      required: false
-    label: License Number
   label: Primary Contact
   description: The main account owner. Contact information is displayed across the
     site.
@@ -184,26 +163,6 @@ fields:
     config:
       required: false
     label: Pinterest
-  - name: zillow
-    type: text
-    config:
-      required: false
-    label: Zillow
-  - name: redfin
-    type: text
-    config:
-      required: false
-    label: Redfin
-  - name: realtor
-    type: text
-    config:
-      required: false
-    label: Realtor
-  - name: trulia
-    type: text
-    config:
-      required: false
-    label: Trulia
   - name: reddit
     type: text
     config:
