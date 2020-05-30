@@ -14,13 +14,6 @@ sections:
   label: Design
 - type: heading
   label: Default Pages
-- type: directory
-  path: content/listings
-  label: Property Listings
-  create: documents
-  match: "**/*"
-  templates:
-  - property
 - type: document
   path: content/contact/_index.md
   label: Contact
@@ -68,11 +61,6 @@ sections:
   match: "**/*"
   templates:
   - blog
-- type: heading
-  label: IDX Configuration
-- type: document
-  path: data/idx.yaml
-  label: Set Up
 - type: heading
   label: Misc
 - type: document
