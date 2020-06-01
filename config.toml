@@ -1,10 +1,6 @@
 baseURL = "https://trialrun.netlify.app"
 languageCode = "en-us"
 [[menu.main]]
-name = "Blog"
-url = "/blog"
-weight = 4
-[[menu.main]]
 name = "Testimonials"
 parent = "Resources"
 url = "/testimonials"
@@ -20,16 +16,16 @@ parent = "Resources"
 url = "/partners"
 weight = 1
 [[menu.main]]
-name = "Resources"
-weight = 3
-[[menu.main]]
-name = "Listings"
-url = "/listings"
-weight = 2
-[[menu.main]]
 name = "Home"
 url = "/"
 weight = 1
+[[menu.main]]
+name = "Resources"
+weight = 2
+[[menu.main]]
+name = "Blog"
+url = "/blog"
+weight = 3
 [taxonomies]
 category = "categories"
 project = "projects"
