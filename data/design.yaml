@@ -99,7 +99,7 @@ footer:
     or background color of your choice. Contact me for a full demo.
   disable_background_color: false
   footer_background_image: "/uploads/shutterstock_43273009.jpg"
-  enable_black_text: false
+  enable_black_text: true
 colors:
   text_link_colors: rgb(169, 140, 83)
   button_background_colors: "#A98C53"
