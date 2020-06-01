@@ -32,5 +32,5 @@ url = "/"
 weight = 1
 [taxonomies]
 category = "categories"
-status = "status"
+project = "projects"
 tag = "tags"
