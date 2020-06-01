@@ -25,16 +25,16 @@ home_sections:
   intro_body: Each section of the home page can be arranged and customized through
     your phone or computer. Easily manage your website through our website editor
     customized specifically for real estate professionals.
-  add_photo: "/uploads/office.jpg"
+  add_photo: "/uploads/intro.jpg"
   intro_align_text: has-text-left
-  intro_background_color: "#2C2C2C"
+  intro_background_color: "#FFFFFF"
   intro_add_button:
     button_label: Learn more
     intro_button_link: "/contact"
     intro_open_in_a_new_tab: true
     intro_button_background_color: "#464646"
     intro_button_text_color: "#E2E2E2"
-  intro_enable_white_text_color: true
+  intro_enable_white_text_color: false
 - template: cta
   call_to_action_two:
     icon_two_cta: ''
