@@ -6,7 +6,7 @@ primary_contact:
   mobile_phone: "(510) 555-1000"
   email: info@sampletemplate.com
   license_type: BRE License
-  license_number: "54535489"
+  license_number: '54535489'
 location_information:
   address: 1900 Addison Street
   city: Berkeley
@@ -28,3 +28,11 @@ primary_company_name: Real Estate Company
 search_engine_optimization:
   meta_title: Real Estate Property testing
   meta_description: This is my business just adding on to description
+hours:
+  monday: 8AM - 10PM
+  tuesday: 8AM - 10PM
+  wednesday: 8AM - 8PM
+  thursday: 8AM - 10PM
+  friday: 8AM - 10PM
+  saturday: Closed
+  sunday: Appointments Only
