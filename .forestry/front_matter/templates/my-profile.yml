@@ -180,5 +180,45 @@ fields:
     template: seo
     label: SEO
   label: Search Engine Optimization
+- name: hours
+  type: field_group
+  config: {}
+  fields:
+  - name: monday
+    type: text
+    config:
+      required: false
+    label: Monday
+  - name: tuesday
+    type: text
+    config:
+      required: false
+    label: Tuesday
+  - name: wednesday
+    type: text
+    config:
+      required: false
+    label: Wednesday
+  - name: thursday
+    type: text
+    config:
+      required: false
+    label: Thursday
+  - name: friday
+    type: text
+    config:
+      required: false
+    label: Friday
+  - name: saturday
+    type: text
+    config:
+      required: false
+    label: Saturday
+  - name: sunday
+    type: text
+    config:
+      required: false
+    label: Sunday
+  label: Hours
 pages:
 - data/profile.yaml
