@@ -86,7 +86,7 @@ home_sections:
   blog_align_title_text: has-text-centered
   blog_title: Our Latest Posts
   blog_subtitle: View our latest posts for useful information
-  blog_background: "#7B7B7B"
+  blog_background: "#fff"
   blog_enable_white_text_color: true
 - template: testimonial-slider
   testimonial_slider_title: Client Reviews

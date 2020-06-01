@@ -1,0 +1,146 @@
+<!-- Footer -->
+<div style="clear:both"></div>
+<footer class="footer site-footer" {{ if .Site.Data.design.footer.disable_background_color }} style="background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url({{ .Site.Data.design.footer.footer_background_image }}) no-repeat center;background-size: cover;background-attachment:fixed"{{ else }} style="{{ safeHTMLAttr (printf "background-color: %s" .Site.Data.design.footer.footer_background) }}"{{ end }}>
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>
+        <a href="{{ .Site.BaseURL }}">
+              {{ with .Site.Data.design.logo_or_title.upload_logo}}
+          <img src="{{ . }}" alt="{{ $.Site.Data.profile.primary_company_name }}" width="200">
+              {{ else }}
+          <h1>{{ .Site.Data.design.logo_or_title.title }}</h1>
+              {{ end }}
+        </a>
+        <p>{{ .Site.Data.design.footer.footer_bio }}</p>
+        <em>{{ .Site.Data.profile.primary_contact.license_type }} {{ .Site.Data.profile.primary_contact.license_number }}</em>
+        {{ $footerSocial := .Site.Data.profile.social_accounts }}
+        <ul class="footer-social">
+          {{ with $footerSocial.facebook }}
+          <li><a href="{{ . }}" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></i></a></li>
+          {{end}}
+
+          {{ with $footerSocial.instagram }}
+          <li><a href="{{ . }}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+          {{end}}
+
+          {{ with $footerSocial.linkedin }}
+          <li><a href="{{ . }}" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+          {{end}}
+
+          {{ with $footerSocial.pinterest }}
+          <li><a href="{{ . }}" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+          {{end}}
+
+          {{ with $footerSocial.twitter }}
+          <li><a href="{{ . }}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+          {{end}}
+
+          {{ with $footerSocial.youtube }}
+          <li><a href="{{ . }}" target="_blank" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+          {{end}}
+
+          {{ with $footerSocial.reddit }}
+          <li><a href="{{ . }}" target="_blank" title="Reddit">Reddit</a></li>
+          {{end}}
+        </ul>
+      </div>
+      <div class="column">
+        <h4 class="subtitle is-6" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Contact</h4>
+        {{ $location := .Site.Data.profile.location_information }}
+        {{ $contact := .Site.Data.profile.primary_contact }}
+        <ul {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}} class="footer-contact">
+          {{ if $location }}<li><i class="fas fa-map-marker-alt"></i>{{ $location.address }} {{ $location.city }} {{ $location.state }} {{ $location.zip_code }}</li> {{ end }}
+          {{ if $contact }}<li><i class="far fa-envelope"></i><a href="mailto:{{ $contact.email }}">{{ $contact.email }}</a></li> {{ end }}
+          {{ if $contact }}<li><i class="fas fa-mobile-alt"></i> <a href="tel:{{ $contact.mobile_phone }}">{{ $contact.mobile_phone }}</a></li> {{ end }}
+          {{ if $contact }}<li><i class="fas fa-phone-alt"></i> <a href="tel:{{ $contact.phone }}">{{ $contact.phone }}</a></li> {{ end }}
+        </ul>
+        
+        
+      </div>
+      <div class="column">
+        <h4 class="subtitle is-6" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Send a Message</h4>
+        
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input name="bot-field" type="hidden"/>
+          <div class="field is-horizontal">
+            <div class="field-body">
+              <div class="field">
+                <p class="control is-expanded">
+                  <input class="input" type="text" placeholder="First Name" name="first name">
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" placeholder="Last Name" name="last name">
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="field">
+            <div class="control">
+              <input class="input" type="text" placeholder="Phone" name="phone">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <input class="input" type="email" placeholder="Email" name="email address">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" placeholder="Your Message" name="message"></textarea>
+            </div>
+          </div>
+          <div class="control">
+            <button class="button" style="{{ safeHTMLAttr (printf "background-color: %s" $.Site.Data.design.colors.button_background_colors) }}">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+<div class="bottom-credit">
+  <small>&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.primary_company_name }}</small> &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a>
+</div>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
+        <script src="{{.Site.BaseURL}}/js/main.js"></script>
+        <script>
+
+          // COLORS
+          // SECONDARY BUTTON
+          document.querySelectorAll(".secondary-btn").forEach(function(el) {
+            el.style.color = '{{ .Site.Data.design.colors.text_link_colors }}';
+          });
+          // PRIMARY BUTTON
+          document.querySelectorAll("a.main-btn").forEach(function(bg) {
+            bg.style.backgroundColor = '{{ .Site.Data.design.colors.button_background_colors }}';
+          });
+
+
+        </script>
+        <script>
+            $(document).ready(function() {
+            
+            // Check for click events on the navbar burger icon
+                $(".navbar-burger").click(function() {
+                
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    $(".navbar-burger").toggleClass("is-active");
+                    $(".navbar-menu").toggleClass("is-active");
+                
+                });
+
+                $('.sub-menu').click(function(){
+                $('.sub').toggleClass('sub-active-menu');
+                 });
+            });
+            </script>
+  </body>
+</html>
