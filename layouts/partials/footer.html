@@ -25,10 +25,11 @@
                     {{ $location := .Site.Data.profile.location_information }}
                     {{ $contact := .Site.Data.profile.primary_contact }}
                     <ul {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}} class="footer-contact">
-                      {{ if $location }}<li><i class="fas fa-map-marker-alt"></i>{{ $location.address }} {{ $location.city }} {{ $location.state }} {{ $location.zip_code }}</li> {{ end }}
-                      {{ if $contact }}<li><i class="far fa-envelope"></i><a href="mailto:{{ $contact.email }}">{{ $contact.email }}</a></li> {{ end }}
-                      {{ if $contact }}<li><i class="fas fa-mobile-alt"></i> <a href="tel:{{ $contact.mobile_phone }}">{{ $contact.mobile_phone }}</a></li> {{ end }}
-                      {{ if $contact }}<li><i class="fas fa-phone-alt"></i> <a href="tel:{{ $contact.phone }}">{{ $contact.phone }}</a></li> {{ end }}
+
+                      {{ if gt ( len $location.address ) 0 }}{{ if $location }}<li><i class="fas fa-map-marker-alt"></i>{{ $location.address }} {{ $location.city }} {{ $location.state }} {{ $location.zip_code }}</li> {{ end }}{{ end }}
+                      {{ if gt ( len $contact.email ) 0 }}{{ if $contact }}<li><i class="far fa-envelope"></i><a href="mailto:{{ $contact.email }}">{{ $contact.email }}</a></li> {{ end }}{{ end }}
+                      {{ if gt ( len $contact.mobile_phone ) 0 }}{{ if $contact.mobile_phone }}<li><i class="fas fa-mobile-alt"></i> <a href="tel:{{ $contact.mobile_phone }}">{{ $contact.mobile_phone }}</a></li> {{ end }}{{ end }}
+                      {{ if gt ( len $contact.phone ) 0 }}{{ if $contact.phone }}<li><i class="fas fa-phone-alt"></i> <a href="tel:{{ $contact.phone }}">{{ $contact.phone }}</a></li> {{ end }}{{ end }}
                     </ul>
                   </div>
                 <div class="column">
@@ -48,6 +49,7 @@
                     <h4 class="subtitle is-4" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Let's Connect</h4>
                     {{ $footerSocial := .Site.Data.profile.social_accounts }}
                         <ul class="footer-social">
+                        
                         {{ with $footerSocial.facebook }}
                         <li><a href="{{ . }}" target="_blank" title="Facebook" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-facebook-f"></i></a></li>
                         {{end}}
@@ -75,12 +77,20 @@
                         {{ with $footerSocial.reddit }}
                         <li><a href="{{ . }}" target="_blank" title="Reddit" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Reddit</a></li>
                         {{end}}
+
+                        
+                        {{ with $footerSocial.houzz }}
+                        <li><a href="{{ . }}" target="_blank" title="Houzz" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-houzz"></i></a></li>
+                        {{end}}
                         </ul>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+<div class="bottom-credit">
+    <small>&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.primary_company_name }}</small> &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a>
+  </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
