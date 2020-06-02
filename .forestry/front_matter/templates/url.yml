@@ -1,0 +1,11 @@
+---
+label: URL
+hide_body: true
+fields:
+- name: url
+  type: text
+  config:
+    required: false
+  label: url
+  description: Changing the URL can potentially cause broken links if links are already
+    manually linked.
