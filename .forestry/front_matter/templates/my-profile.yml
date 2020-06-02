@@ -153,6 +153,11 @@ fields:
     config:
       required: false
     label: Youtube
+  - name: houzz
+    type: text
+    config:
+      required: false
+    label: Houzz
   - name: linkedin
     type: text
     config:
