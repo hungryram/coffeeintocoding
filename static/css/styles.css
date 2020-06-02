@@ -239,11 +239,6 @@ div.box {
     transition: all .4s ease;
 }
 
-div.box:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,.15)!important;
-    transition: all .4s ease;
-}
-
 p {
     line-height: 2;
 }
@@ -275,6 +270,7 @@ a.button.hero-button {
 
 ul.pagination {
     justify-content: center;
+    margin: 0 auto;
 }
 
 li.page-item {
@@ -620,6 +616,10 @@ a.descending {
 
 .agent-social i {
     font-size: 24px;
+}
+
+.team-list .box {
+    height: 100%;
 }
 
 /* HOME TILE */
