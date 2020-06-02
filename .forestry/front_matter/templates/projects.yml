@@ -17,6 +17,11 @@ fields:
     time_format: 
     display_utc: false
     export_format: MM/DD/YYYY
+- name: projects
+  type: tag_list
+  default: []
+  label: Projects
+  description: Categorize your project.<em> i.e kitchen, bedroom, backyard, etc...</em>
 - name: client_name
   type: text
   config:
