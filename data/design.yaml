@@ -35,34 +35,6 @@ home_sections:
     intro_button_background_color: "#464646"
     intro_button_text_color: "#E2E2E2"
   intro_enable_white_text_color: false
-- template: cta
-  call_to_action_two:
-    icon_two_cta: ''
-    image_two_cta: ''
-    title_two_cta: Kitchen Areas
-    body_text_two_cta: Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-      reprehenderit architecto perferendis iste aut tempora vero esse quae labore,
-      fuga cumque ratione quasi. A explicabo voluptatem officiis impedit libero temporibus.
-    cta_two_add_a_link: ''
-    cta_two_new_tab: false
-  call_to_action_three:
-    icons_three_cta: ''
-    image_three_cta: ''
-    title_three_cta: Bathroom
-    body_text_three_cta: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Vel reprehenderit architecto perferendis iste aut tempora vero esse quae labore,
-      fuga cumque ratione quasi. A explicabo voluptatem officiis impedit libero temporibus.
-    cta_three_add_a_link: ''
-    cta_three_new_tab: false
-  call_to_action_one:
-    title_one_cta: Public Places
-    body_text_one_cta: Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-      reprehenderit architecto perferendis iste aut tempora vero esse quae labore,
-      fuga cumque ratione quasi. A explicabo voluptatem officiis impedit libero temporibus.
-    icon_one_cta: ''
-    image_one_cta: ''
-    cta_one_add_a_link: ''
-    cta_two_new_tab: false
 - template: featured-tiles
   top_left_tile:
     top_left_featured_title: Los Angeles
@@ -82,6 +54,10 @@ home_sections:
   agent_title: Our Team
   agent_subtitle: Our team of real estate professionals are ready to help you
   agent_background: ''
+- template: project-slider
+  project_text_align: []
+  project_title: ''
+  project_subtitle: ''
 - template: featured-blog
   blog_align_title_text: has-text-centered
   blog_title: Our Latest Posts
