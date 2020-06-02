@@ -36,10 +36,6 @@ home_sections:
     intro_button_background_color: "#464646"
     intro_button_text_color: "#FFFFFF"
   intro_enable_white_text_color: false
-- template: project-slider
-  project_text_align: ''
-  project_title: ''
-  project_subtitle: ''
 - template: intro
   intro_body: |-
     At CK Designs, we take as much pride in your home as you do! When you trust us with your next project, we guarantee unmatched dedication to a job well done and your complete satisfaction.
@@ -56,6 +52,10 @@ home_sections:
   add_photo: ''
   intro_background_color: ''
   intro_enable_white_text_color: false
+- template: project-slider
+  project_text_align: ''
+  project_title: ''
+  project_subtitle: ''
 - template: featured-blog
   blog_align_title_text: has-text-centered
   blog_title: Our Latest Posts
