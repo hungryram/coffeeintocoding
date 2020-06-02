@@ -1,4 +1,42 @@
 ---
 label: Projects
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: client_name
+  type: text
+  config:
+    required: false
+  label: Client Name
+- name: date
+  type: number
+  label: Date Completed
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Description
+- name: main_image
+  type: file
+  config:
+    maxSize: 5
+  label: Main Image
+- name: gallery
+  type: image_gallery
+  config: {}
+  label: Gallery
