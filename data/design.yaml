@@ -35,29 +35,15 @@ home_sections:
     intro_button_background_color: "#464646"
     intro_button_text_color: "#E2E2E2"
   intro_enable_white_text_color: false
-- template: featured-tiles
-  top_left_tile:
-    top_left_featured_title: Los Angeles
-    top_left_link_to_property: "/listings"
-    top_left_featured_image: "/uploads/kichen-1.jpg"
-  bottom_left_tile:
-    featured_title: San Diego
-    featured_image: "/uploads/main.jpg"
-    bottom_left_link_to_property: "/san-diego"
-  right_tile:
-    featured_title: Orange County
-    featured_image: "/uploads/whiteinterior.jpg"
-    right_link_to_property: "/orange-county"
-  tile_background_color: ''
+- template: project-slider
+  project_text_align: []
+  project_title: ''
+  project_subtitle: ''
 - template: agent-slider
   agent_text_align: has-text-centered
   agent_title: Our Team
   agent_subtitle: Our team of real estate professionals are ready to help you
   agent_background: ''
-- template: project-slider
-  project_text_align: []
-  project_title: ''
-  project_subtitle: ''
 - template: featured-blog
   blog_align_title_text: has-text-centered
   blog_title: Our Latest Posts
