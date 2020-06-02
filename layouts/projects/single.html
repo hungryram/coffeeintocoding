@@ -1,0 +1,61 @@
+{{ define "main" }}
+
+<div class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                {{ range .Params.gallery }}
+                <img src="{{ . }}" alt="">
+                {{ end }}
+            </div>
+        </div>
+        <div class="columns content">
+            <div class="column">
+                <h1 class="title is-2">{{ .Title }}</h2>
+                <p>{{ .Params.description }}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="columns">
+            {{ if .Params.projects }}
+            <div class="column">
+                <h4 class="subtitle is-4">Category</h4>
+                {{ range .Params.projects }}
+                <p>{{ . }}</p>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Params.date }}
+            <div class="column">
+                <h4 class="subtitle is-4">Completed</h4>
+                <time>{{.Date.Format "Jan 2, 2006" }}</time>
+            </div>
+            {{ end }}
+
+            <div class="column">
+                <h4 class="subtitle is-4">Share</h4>
+                <div id="share-buttons">            
+                    <!-- Email -->
+                    <a href="mailto:?Subject=Check%20Out%20This%20Listing&amp;Body=Check%20out%20this%20project%20from%20{{ .Permalink | absURL }}">
+                      <i class="far fa-envelope"></i>
+                    </a>    
+                    <!-- Facebook -->
+                    <a href="http://www.facebook.com/sharer.php?u={{ .Permalink | absURL }}" target="_blank">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>     
+                    <!-- LinkedIn -->
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | absURL }}" target="_blank">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>           
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/share?url={{ .Permalink | absURL }}&amp;text=Check%20out%20this%20project%20from%20{{ .Site.Data.profile.logo_and_title.website_title }}" target="_blank">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                </div> <!-- end share buttons -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

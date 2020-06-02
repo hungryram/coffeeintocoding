@@ -37,8 +37,8 @@ home_sections:
   intro_enable_white_text_color: false
 - template: project-slider
   project_text_align: []
-  project_title: ''
-  project_subtitle: ''
+  project_title: 'Projects'
+  project_subtitle: 'View more of our projects'
 - template: agent-slider
   agent_text_align: has-text-centered
   agent_title: Our Team

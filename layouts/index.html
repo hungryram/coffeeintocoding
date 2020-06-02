@@ -123,6 +123,36 @@
     </section>
     {{ end }}
 
+        {{/*  PROJECT SLIDER  */}}
+        {{ if eq "project-slider" .template }}
+        <section class="section home-featured-sections">
+            <div class="container">
+                <!-- Start Carousel -->
+                <div class="columns {{ with .agent_text_align }}{{ . }}{{end}}">
+                    <div class="column">
+                        <h1 class="title">{{ .project_title }}</h1>
+                        <h4>{{ .project_subtitle }}</h4>
+                    </div>
+                </div>
+                <div class="projectmain-slide">
+                    {{ range first 20 (where $.Site.RegularPages "Type" "projects") }}
+    
+                        <div class="project-slider">
+                            {{ if.Params.main_image }}
+                            <div class="project-container">
+                                <a href="{{ .Permalink }}" class="projecthover"><img src="{{ .Params.main_image }}" alt="" style="object-fit: cover;height:300px" alt="{{ .Site.BaseURL }}">
+                            </a>
+                            </div>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+                <!-- End Carousel -->
+                <div class="column" align="center"><a class="button main-btn" href="/testimonials">View All</a></div>
+            </div>
+        </section>
+        {{ end }}
+
     {{ end }}
 
 {{ partial "footer.html" . }}

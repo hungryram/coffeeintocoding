@@ -2,20 +2,23 @@
 
 <div class="section">
     <div class="container">
-        <div class="columns">
-            <div class="column portfolio-title">
-                <h2 class="title is-2">{{ .Title }}</h2>
-            </div>
-        </div>
         <div class="columns is-multiline">
             {{ range .Pages }}
             <div class="column is-4 portfolio-container-list">
                 <div class="portfolio-card">
-                        <div class="portfolio-bg" style="background: url({{ .Params.featured_image }});height: 30vh;position:relative;background-size:cover">
-                            <a href="{{ .Permalink }}" class="view-more">View More</a>
+                        <div class="portfolio-bg" style="background: url({{ .Params.main_image }});height: 30vh;background-size:cover">
                         </div>
                         <div class="portfolio-list-content">
-                            <h4 class="subtitle is-5">{{ .Title }}</h4>
+                            <h4 class="subtitle is-5" style="margin: 10px 0">{{ .Params.Title }}</h4>
+                            <ul>
+                                {{ range $name, $taxonomy := .Site.Taxonomies.projects }}
+                              <li>
+                                <a href="/projects{{ $name | urlize | relURL }}" class="secondary-btn">/ {{ $name | humanize }}</a>
+                              </li>
+                              {{end}}
+                            </ul>
+                            <a href="{{ .Permalink }}" class="view-more secondary-btn">View Project</a>
+
                         </div>
                 </div>
             </div>

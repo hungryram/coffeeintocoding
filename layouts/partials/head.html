@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Josefin+Sans:wght@500;700&family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
     {{ with .Params.search_engine_optimization.meta_title }}
     <title>{{ . }}</title>
@@ -22,7 +23,7 @@
     {{ $color := .Site.Data.design.hero_button_bg_color }}
     <style>
         .hero__container {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
             url("{{ .Site.Data.design.main_image.home_background_image }}") no-repeat center;
         }
     </style>
