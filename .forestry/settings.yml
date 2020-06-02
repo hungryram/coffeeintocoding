@@ -9,6 +9,8 @@ sections:
   label: Projects
   create: documents
   match: "**/*"
+  templates:
+  - projects
 - type: heading
   label: My Website
 - type: document
