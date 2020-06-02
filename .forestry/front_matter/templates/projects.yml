@@ -46,4 +46,5 @@ fields:
   config: {}
   label: Gallery
 pages:
+- content/projects/future-visions.md
 - content/projects/progressive-design.md
