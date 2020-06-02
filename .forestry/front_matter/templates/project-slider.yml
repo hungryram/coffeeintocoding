@@ -1,4 +1,29 @@
 ---
 label: Project Slider
 hide_body: true
-fields: []
+fields:
+- name: project_title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: project_subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
+- name: project_text_align
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - has-text-left
+    - has-text-centered
+    - has-text-right
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Text Align
