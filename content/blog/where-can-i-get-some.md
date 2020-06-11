@@ -1,10 +1,11 @@
 +++
-author = "teams/samuel-palmer.md"
+author = "author/ram-dettmer.md"
 categories = ["real estate"]
 date = 2020-05-06T07:00:00Z
 featured_image = "/uploads/shutterstock_549055441.jpg"
 tags = ["commercial"]
 title = "Where can I get some?"
+url = ""
 [search_engine_optimization]
 meta_description = ""
 meta_title = ""

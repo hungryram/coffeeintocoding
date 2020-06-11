@@ -30,7 +30,7 @@ footer:
   footer_background_image: "/uploads/shutterstock_43273009.jpg"
   enable_black_text: true
 colors:
-  text_link_colors: rgb(135, 135, 135)
+  text_link_colors: rgb(219, 155, 62)
   button_background_colors: "#2C2C2C"
   header_background_color: "#FFFFFF"
   navigation_link_color: "#BA0000"
