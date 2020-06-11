@@ -1,41 +1,36 @@
-<section class="hero is-fullheight hero__container">
+<section class="hero hero__container">
     <!-- Hero head: will stick at the top -->
 {{ partial "navbar.html" . }}
-
-    <!-- Enable MP4 Video Background -->
-    {{ if .Site.Data.design.main_image.video_background }}
-      <div class="video-container">
-        <video playsinline autoplay loop muted id="bgvid">
-            <source src="{{ .Site.Data.design.main_image.add_mp4_link }}" type="video/mp4">
-        </video>
-    </div>
-    {{end}}
-
-    {{ if .Site.Data.design.main_image.add_youtube_background_video }}
-    <div class="youtube-container">
-    <iframe id="ytplayer-box" type="text/html" width="720" height="405"
-    src="https://www.youtube.com/embed/{{ .Site.Data.design.main_image.add_url_to_youtube_video }}?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&rel=0&playlist={{ .Site.Data.design.main_image.add_url_to_youtube_video }}"
-    frameborder="0" allowfullscreen></iframe>
-    </div>
-    {{ end }}
-
-<div class="black-overlay">
-</div>
-
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-      {{ with .Site.Data.design.main_image.align_hero_text }}
-        <div class="container {{ . }}">
-          {{end}}
-            <h1 class="hero-title title is-1">{{ .Site.Data.design.main_image.hero_title }}</h1>
-            <h2 class="subtitle">{{ .Site.Data.design.main_image.hero_subtitle }}</h2>
-
-            {{ if gt ( len .Site.Data.design.main_image.add_a_button.hero_button_text ) 0 }}
-                <a href="{{ .Site.Data.design.main_image.add_a_button.hero_button_link }}" style="{{ safeHTMLAttr (printf "background-color: %s" .Site.Data.design.main_image.add_a_button.hero_button_bg_color ) }};{{ safeHTMLAttr (printf "color: %s" .Site.Data.design.main_image.add_a_button.hero_button_text_color ) }}" class="button hero-button" {{ if .Site.Data.design.main_image.add_a_button.open_in_new_tab }}target="_blank"{{end}} >{{ .Site.Data.design.main_image.add_a_button.hero_button_text }}</a>
-            {{end}}
-            
+<div class="section">
+<div class="responsive-slide">
+  {{ range first 6 (where $.Site.RegularPages "Type" "blog") }}
+  <div class="column">
+    <div class="home-card card">
+        <div class="card-image">
+            {{ if .Params.featured_image}}
+          <figure class="image is-4by5">
+            <img src="{{ .Params.featured_image }}" alt="Featured blog image" style="object-fit: cover;">
+          </figure>
+          {{ else }}
+          <figure class="image is-16by9">
+            <img src="http://www.hungryram.com/uploads/nophotohouse.jpg" alt="Featured blog image" style="object-fit: cover;">
+          </figure>
+          {{ end }}
         </div>
-    </div>
-  
-  </section>
+        <div class="card-content content home-blog-content">
+          <div class="media-content">
+            <h3 class="has-text-black">{{ .Title }}</h3>
+          </div> 
+          <div class="content">
+        <time><small><i class="far fa-calendar-alt"></i> {{.Date.Format "Jan 2, 2006" }}</small></time><br>
+            <a href="{{ .Permalink }}" class="secondary-btn">Continue Reading</a>
+          </div>
+        </div>
+      </div>
+</div>
+  {{ end }}
+</div>
+<hr>
+</div>
+</section>
 

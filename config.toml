@@ -1,4 +1,4 @@
-baseURL = "https://carly.netlify.app"
+baseURL = "/"
 languageCode = "en-us"
 [[menu.main]]
 name = "Testimonials"

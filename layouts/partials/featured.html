@@ -1,20 +1,22 @@
-{{ partial "head.html" . }}
-{{ partial "hero.html" . }}
+{{ define "main" }}
+
 <div class="section agent-lists">
     <div class="container">
         <div class="columns">
+            <div class="column">
+                {{ partial "breadcrumbs.html" . }}
+            </div>
+        </div>
+        <div class="columns">
             <div class="column is-8">
-                <div class="columns is-multiline">
-                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") 4 }}
+                {{ $paginator := .Paginate (where .Pages "Type" "blog") 4 }}
                 {{ range $paginator.Pages }}
 
-                <div class="column is-6">
+                <div class="box content">
                     <img src="{{ .Params.featured_image }}" alt="">
-                          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-                          <a href="/status/{{ $name | urlize }}">/ {{ $name | humanize }}</a>
-                        {{end}}
                     <h1>{{.Title}}</h1>
                     {{ .Summary | markdownify }}
+                    <hr>
                     <div class="columns">
                         <div class="column">
                             {{ $blogDate := .Params.date_published }}
@@ -25,7 +27,6 @@
                 </div>
                 {{ end }}
                     {{ partial "pagination" . }}
-                </div>
             </div>
             
 
@@ -33,4 +34,6 @@
 
         </div>
     </div>
-</div>{{ partial "footer.html" . }}
+</div>
+
+{{ end }}
