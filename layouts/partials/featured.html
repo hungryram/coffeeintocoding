@@ -1,32 +1,30 @@
-{{ define "main" }}
-
 <div class="section agent-lists">
     <div class="container">
         <div class="columns">
-            <div class="column">
-                {{ partial "breadcrumbs.html" . }}
-            </div>
-        </div>
-        <div class="columns">
             <div class="column is-8">
-                {{ $paginator := .Paginate (where .Pages "Type" "blog") 4 }}
+                <div class="columns is-multiline">
+                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") 4 }}
                 {{ range $paginator.Pages }}
 
-                <div class="box content">
-                    <img src="{{ .Params.featured_image }}" alt="">
-                    <h1>{{.Title}}</h1>
-                    {{ .Summary | markdownify }}
-                    <hr>
+                <div class="column is-6">
+                    <figure class="image is-square">
+                        <img src="{{ .Params.featured_image }}" alt="Featured blog image" style="object-fit: cover;">
+                      </figure>
+                          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                          <a href="/status/{{ $name | urlize }}">/ {{ $name | humanize }}</a>
+                        {{end}}
+                    <h1 class="title is-6">{{.Title}}</h1>
                     <div class="columns">
                         <div class="column">
                             {{ $blogDate := .Params.date_published }}
-                            <time><i class="far fa-calendar-alt"></i> {{.Date.Format "Jan 2, 2006" }}</time><br><br>
+                            <time><i class="far fa-calendar-alt"></i> {{.Date.Format "Jan 2, 2006" }}</time><br>
                             <a href="{{ .Permalink }}" class="secondary-btn">Read More</a>
                         </div>
                     </div>
                 </div>
                 {{ end }}
                     {{ partial "pagination" . }}
+                </div>
             </div>
             
 
@@ -35,5 +33,3 @@
         </div>
     </div>
 </div>
-
-{{ end }}

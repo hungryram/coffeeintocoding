@@ -1,65 +1,39 @@
-  
-
 {{ define "main" }}
 
 <div class="section agent-lists">
     <div class="container">
-      <div class="columns">
-        <div class="column">
-          {{ partial "breadcrumbs.html" . }}
+        <div class="columns">
+            <div class="column">
+                {{ partial "breadcrumbs.html" . }}
+            </div>
         </div>
-      </div>
-      <div class="columns">
-        <div class="column">
-          <h2 class="title is-4">{{ .Title }}</h2>
-        </div>
-      </div>
         <div class="columns">
             <div class="column is-8">
-                <div class="box">
-                    {{ range .Pages }}
-                        <div class="box default-list">
-                            <a href="{{ .Permalink }}"><i class="fas fa-layer-group"></i><br>{{ .Title }}</a>
-                        </div>        
-            {{ end }}
+                {{ $paginator := .Paginate (where .Pages "Type" "blog") 4 }}
+                {{ range $paginator.Pages }}
+
+                <div class="box content">
+                    <img src="{{ .Params.featured_image }}" alt="">
+                    <h1>{{.Title}}</h1>
+                    {{ .Summary | markdownify }}
+                    <hr>
+                    <div class="columns">
+                        <div class="column">
+                            {{ $blogDate := .Params.date_published }}
+                            <time><i class="far fa-calendar-alt"></i> {{.Date.Format "Jan 2, 2006" }}</time><br><br>
+                            <a href="{{ .Permalink }}" class="secondary-btn">Read More</a>
+                        </div>
+                    </div>
                 </div>
-
+                {{ end }}
+                    {{ partial "pagination" . }}
             </div>
-            {{ partial "sidebar.html" . }}
+            
+
+{{ partial "sidebar.html" . }}
+
         </div>
     </div>
 </div>
 
-
-
-<div class="section">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-              {{ partial "breadcrumbs.html" . }}
-            </div>
-          </div>
-        <div class="columns has-text-centered">
-            <div class="column">
-                <h2 class="title is-4" style="text-transform: capitalize">{{ .Title }}</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="columns has-text-centered is-multiline">
-    {{ range .Pages }}
-
-            <div class="column is-4">
-                <div class="box default-list">
-                    
-                    <a href="{{ .Permalink }}"><i class="fas fa-layer-group"></i><br>{{ .Title }}</a>
-                </div>
-            </div>
-
-    {{ end }}
-        </div>
-    </div>
-</div>
 {{ end }}

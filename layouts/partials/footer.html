@@ -7,46 +7,16 @@
                         {{ with .Site.Data.design.logo_or_title.upload_logo}}
                     <img src="{{ . }}" alt="{{ $.Site.Data.profile.primary_company_name }}" width="200">
                         {{ else }}
-                    <h1>{{ .Site.Data.design.logo_or_title.title }}</h1>
+                    <h1 class="title is-4">{{ .Site.Data.design.logo_or_title.title }}</h1>
                         {{ end }}
                   </a>
                 </div>
             </div>
-            <hr>
         </div>
         <div class="container">
-            <div class="columns">
-                <div class="column" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>
-                    <h4 class="subtitle is-4" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>About</h4>
+            <div class="columns has-text-centered">
+                <div class="column is-half is-offset-one-quarter" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>
                     <p>{{ .Site.Data.design.footer.footer_bio }}</p>
-                </div>
-                <div class="column">
-                    <h4 class="subtitle is-4" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Contact</h4>
-                    {{ $location := .Site.Data.profile.location_information }}
-                    {{ $contact := .Site.Data.profile.primary_contact }}
-                    <ul {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}} class="footer-contact">
-
-                      {{ if gt ( len $location.address ) 0 }}{{ if $location }}<li><i class="fas fa-map-marker-alt"></i>{{ $location.address }} {{ $location.city }} {{ $location.state }} {{ $location.zip_code }}</li> {{ end }}{{ end }}
-                      {{ if gt ( len $contact.email ) 0 }}{{ if $contact }}<li><i class="far fa-envelope"></i><a href="mailto:{{ $contact.email }}">{{ $contact.email }}</a></li> {{ end }}{{ end }}
-                      {{ if gt ( len $contact.mobile_phone ) 0 }}{{ if $contact.mobile_phone }}<li><i class="fas fa-mobile-alt"></i> <a href="tel:{{ $contact.mobile_phone }}">{{ $contact.mobile_phone }}</a></li> {{ end }}{{ end }}
-                      {{ if gt ( len $contact.phone ) 0 }}{{ if $contact.phone }}<li><i class="fas fa-phone-alt"></i> <a href="tel:{{ $contact.phone }}">{{ $contact.phone }}</a></li> {{ end }}{{ end }}
-                    </ul>
-                  </div>
-                <div class="column">
-                    {{ $footerHours := .Site.Data.profile.hours }}
-                    <h4 class="subtitle is-4" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Hours</h4>
-                    <ul class="hours" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>
-                        {{ if $footerHours.monday }}<li>Monday: {{ $footerHours.monday }}</li>{{ end }}
-                        {{ if $footerHours.tuesday }}<li>Tuesday: {{ $footerHours.tuesday }}</li>{{ end }}
-                        {{ if $footerHours.wednesday }}<li>Wednesday: {{ $footerHours.wednesday }}</li>{{ end }}
-                        {{ if $footerHours.thursday }}<li>Thursday: {{ $footerHours.thursday }}</li>{{ end }}
-                        {{ if $footerHours.friday }}<li>Friday: {{ $footerHours.friday }}</li>{{ end }}
-                        {{ if $footerHours.saturday }}<li>Saturday: {{ $footerHours.saturday }}</li>{{ end }}
-                        {{ if $footerHours.sunday }}<li>Sunday: {{ $footerHours.sunday }}</li>{{ end }}
-                    </ul>
-                </div>
-                <div class="column" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>
-                    <h4 class="subtitle is-4" {{ if .Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}>Let's Connect</h4>
                     {{ $footerSocial := .Site.Data.profile.social_accounts }}
                         <ul class="footer-social">
                         
@@ -84,6 +54,7 @@
                         {{end}}
                         </ul>
                 </div>
+               
             </div>
         </div>
     </div>

@@ -1,36 +1,4 @@
 {{ partial "head.html" . }}
 {{ partial "hero.html" . }}
-<div class="section agent-lists">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-8">
-                <div class="columns is-multiline">
-                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") 4 }}
-                {{ range $paginator.Pages }}
 
-                <div class="column is-6">
-                    <img src="{{ .Params.featured_image }}" alt="">
-                          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-                          <a href="/status/{{ $name | urlize }}">/ {{ $name | humanize }}</a>
-                        {{end}}
-                    <h1>{{.Title}}</h1>
-                    {{ .Summary | markdownify }}
-                    <div class="columns">
-                        <div class="column">
-                            {{ $blogDate := .Params.date_published }}
-                            <time><i class="far fa-calendar-alt"></i> {{.Date.Format "Jan 2, 2006" }}</time><br><br>
-                            <a href="{{ .Permalink }}" class="secondary-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                {{ end }}
-                    {{ partial "pagination" . }}
-                </div>
-            </div>
-            
-
-{{ partial "sidebar.html" . }}
-
-        </div>
-    </div>
-</div>{{ partial "footer.html" . }}
+{{ partial "footer.html" . }}
