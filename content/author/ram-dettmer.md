@@ -1,6 +1,7 @@
 +++
 company_name = "Hungry Ram"
 label = "Founder"
+profile = "/uploads/0-1.jpeg"
 title = "Ram Dettmer"
 [social_networks]
 facebook = ""
