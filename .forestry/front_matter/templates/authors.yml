@@ -33,6 +33,11 @@ fields:
   config:
     required: false
   label: Company Name
+- name: company_link
+  type: text
+  config:
+    required: false
+  label: Company Link
 - name: social_networks
   type: field_group
   config: {}
