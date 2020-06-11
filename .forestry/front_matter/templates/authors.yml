@@ -58,3 +58,5 @@ fields:
       required: false
     label: Facebook
   label: Social Networks
+pages:
+- content/author/ram-dettmer.md
