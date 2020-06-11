@@ -45,8 +45,3 @@ fields:
   type: image_gallery
   config: {}
   label: Gallery
-pages:
-- content/projects/exclusive-collections.md
-- content/projects/future-visions.md
-- content/projects/progressive-design.md
-- content/projects/transparency-solution.md
