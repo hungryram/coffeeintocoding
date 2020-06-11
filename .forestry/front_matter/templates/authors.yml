@@ -1,4 +1,60 @@
 ---
 label: Authors
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Author
+- name: label
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - CEO
+    - Founder
+    - Editor
+    - Author
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Label
+- name: company_name
+  type: text
+  config:
+    required: false
+  label: Company Name
+- name: social_networks
+  type: field_group
+  config: {}
+  fields:
+  - name: instagram
+    type: text
+    config:
+      required: false
+    label: Instagram
+  - name: twitter
+    type: text
+    config:
+      required: false
+    label: Twitter
+  - name: pinterest
+    type: text
+    config:
+      required: false
+    label: Pinterest
+  - name: linkedin
+    type: text
+    config:
+      required: false
+    label: Linkedin
+  - name: facebook
+    type: text
+    config:
+      required: false
+    label: Facebook
+  label: Social Networks
