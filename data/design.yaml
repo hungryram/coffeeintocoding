@@ -1,7 +1,7 @@
 ---
 logo_or_title:
-  upload_logo: "/uploads/ck-designsblcak.png"
-  title: CK Designs
+  upload_logo: ''
+  title: COFFEE INTO CODING
   favicon: ''
 main_image:
   hero_subtitle: Kitchen and Bath designs by Carly Kalbrunner
@@ -19,52 +19,7 @@ main_image:
     hero_button_bg_color: "#ffffff"
   add_mp4_link: https://hungryram.s3-us-west-1.amazonaws.com/bath.mp4
   add_youtube_background_video: false
-home_sections:
-- template: intro
-  intro_title: Full Service Kitchen & Bath Design & Remodeling
-  intro_body: For complete expert top-to-bottom residential design in the Fayetteville,
-    GA, and surrounding area, call on CK Designs Kitchen & Bath. We’re your locally
-    owned and operated go-to for cabinetry, countertops, hardware, appliances, plumbing
-    fixtures, lighting, tile backsplash, tile floor, tile showers, flooring, and more!
-  add_photo: "/uploads/intro.jpg"
-  intro_align_text: has-text-left
-  intro_background_color: "#FFFFFF"
-  intro_add_button:
-    button_label: Learn more
-    intro_button_link: "/contact"
-    intro_open_in_a_new_tab: false
-    intro_button_background_color: "#464646"
-    intro_button_text_color: "#FFFFFF"
-  intro_enable_white_text_color: false
-- template: project-slider
-  project_text_align: ''
-  project_title: ''
-  project_subtitle: ''
-- template: intro
-  intro_body: |-
-    At CK Designs, we take as much pride in your home as you do! When you trust us with your next project, we guarantee unmatched dedication to a job well done and your complete satisfaction.
-
-    Give us a call today to learn more or to schedule your free in-home consultation!
-  intro_title: Free In-Home Consultation
-  intro_align_text: has-text-centered
-  intro_add_button:
-    button_label: ''
-    intro_button_link: ''
-    intro_open_in_a_new_tab: false
-    intro_button_background_color: ''
-    intro_button_text_color: ''
-  add_photo: ''
-  intro_background_color: ''
-  intro_enable_white_text_color: false
-- template: featured-blog
-  blog_align_title_text: has-text-centered
-  blog_title: Our Latest Posts
-  blog_subtitle: View our latest posts for useful information
-  blog_background: "#fff"
-  blog_enable_white_text_color: true
-- template: testimonial-slider
-  testimonial_slider_title: Client Reviews
-  testimonial_slider_subtitle: Our clients love us
+home_sections: []
 sub_pages:
   sub_page_image: ''
 footer:
