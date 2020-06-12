@@ -1,6 +1,7 @@
 {{ define "main" }}
 <div class="section">
     <div class="container">
+
         <div class="columns">
             <div class="column">
                 {{ partial "breadcrumbs.html" . }}
@@ -8,18 +9,64 @@
         </div>
         <div class="columns">
             <div class="column is-8 content">
-                <img src="{{ .Params.featured_image }}" alt="">
-                <h1>{{ .Title }}</h1>
+                <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" style="margin-bottom: 50px;">
                 {{ .Content }}
+                <div id="share-buttons"> 
+                    <h3 class="subtitle is-5">Share this Blog</h3>
+           
+                    <!-- Email -->
+                    <a href="mailto:?Subject=Check%20Out%20This%20Blog&amp;Body=Check%20out%20this%20blog%20from%20{{ .Permalink | absURL }}">
+                      <i class="far fa-envelope"></i>
+                    </a>    
+                    <!-- Facebook -->
+                    <a href="http://www.facebook.com/sharer.php?u={{ .Permalink | absURL }}" target="_blank">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>     
+                    <!-- LinkedIn -->
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | absURL }}" target="_blank">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>       
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/share?url={{ .Permalink | absURL }}&amp;text=Check%20out%20this%20blog%20from%20{{ .Site.Data.profile.logo_and_title.website_title }}" target="_blank">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                </div> <!-- end share buttons -->
                 <div class="author-blog">
                     {{ if .Params.author }}<p>
                         {{ with .Site.GetPage .Params.author }}
-                        <div class="columns notification">
+                        <div class="columns box">
                             <div class="column is-4 has-text-centered">
-                                <img src="{{ .Params.details.agent_photo }}" alt="" style="object-fit: cover;height:150px;width:150px;border-radius:50%;margin: 0 auto;">
+                                <img src="{{ .Params.profile }}" alt="" style="object-fit: cover;height:150px;width:150px;border-radius:50%;margin: 0 auto;">
                             </div>
                             <div class="column">
                                 <h4 class="subtitle is-4">{{ .Title }}</h4>
+                                <ul class="author-social-preview">
+                                    {{ $authorSocial := .Params.social_networks }}
+                                        {{ with $authorSocial.facebook }}
+                                        <li><a href="{{ . }}" target="_blank" title="Facebook" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-facebook-f"></i></a></li>
+                                        {{end}}
+                
+                                        {{ with $authorSocial.instagram }}
+                                        <li><a href="{{ . }}" target="_blank" title="Instagram"><i class="fab fa-instagram" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}></i></a></li>
+                                        {{end}}
+                
+                                        {{ with $authorSocial.linkedin }}
+                                        <li><a href="{{ . }}" target="_blank" title="Linkedin" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-linkedin-in"></i></a></li>
+                                        {{end}}
+                
+                                        {{ with $authorSocial.pinterest }}
+                                        <li><a href="{{ . }}" target="_blank" title="Pinterest" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-pinterest-p"></i></a></li>
+                                        {{end}}
+                
+                                        {{ with $authorSocial.twitter }}
+                                        <li><a href="{{ . }}" target="_blank" title="Twitter" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-twitter"></i></a></li>
+                                        {{end}}
+                
+                                        {{ with $authorSocial.youtube }}
+                                        <li><a href="{{ . }}" target="_blank" title="Youtube" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-youtube"></i></a></li>
+                                        {{end}}
+                
+                                        </ul>
                                 <h6 class="subtitle is-6">{{ .Params.details.title }}</h6>
                                 {{ .Summary }}
                                 <a href="{{ .Permalink }}" class="secondary-btn">Read More</a>

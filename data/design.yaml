@@ -3,29 +3,9 @@ logo_or_title:
   upload_logo: ''
   title: COFFEE INTO CODING
   favicon: ''
-main_image:
-  hero_subtitle: Kitchen and Bath designs by Carly Kalbrunner
-  home_background_image: "/uploads/kichen.jpg"
-  video_background: true
-  upload_video: ''
-  add_url_to_youtube_video: pY2CWYxUbrM
-  hero_title: Modern Home Designs
-  align_hero_text: has-text-centered
-  add_a_button:
-    hero_button_text: GET IN TOUCH
-    hero_button_link: "/contact"
-    open_in_new_tab: false
-    hero_button_text_color: "#000000"
-    hero_button_bg_color: "#ffffff"
-  add_mp4_link: https://hungryram.s3-us-west-1.amazonaws.com/bath.mp4
-  add_youtube_background_video: false
-home_sections: []
-sub_pages:
-  sub_page_image: ''
 footer:
   footer_background: "#ECECEC"
-  footer_bio: The footer can be adjusted to the color you need. Use a background image
-    or background color of your choice. Contact me for a full demo.
+  footer_bio: Coffee into Coding is a blog that aims to help coders and anyone in the technology industry grow.
   disable_background_color: false
   footer_background_image: "/uploads/shutterstock_43273009.jpg"
   enable_black_text: true

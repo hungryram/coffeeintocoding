@@ -1,3 +1,15 @@
 {{ define "main" }}
 
+<div class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                {{ range .Pages }}
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
 {{ end }}

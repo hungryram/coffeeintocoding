@@ -3,16 +3,18 @@
 
 {{ if  .Site.Data.design.sub_pages.sub_page_image }}<div style="height: 25vh;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.8)),url({{ .Site.Data.design.sub_pages.sub_page_image }}); background-size: cover;background-position: center" class="page-banner">{{ else }}
     <div class="interior-section">{{ end }}
-    <div class="section">
         <div class="container">
-            <div class="columns has-text-centered">
+            <div class="columns">
                 <div class="column">
-                    <h2 class="title is-3">{{ .Title }}</h2>
+                    
+                    <h1 class="title is-3">{{ .Title }}</h1>
+                    
+                    <time class="secondary-btn">{{.Date.Format "Jan 2, 2006" }}</time>
+                    
                 </div>
             </div>
         </div>
     </div>
-</div>
 <main>
 {{ block "main" . }}
 

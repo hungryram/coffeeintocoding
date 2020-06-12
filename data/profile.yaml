@@ -1,30 +1,6 @@
 ---
 primary_contact:
   full_name: Ram Dettmer
-  title: ''
-  phone: ''
-  mobile_phone: ''
-  email: ''
-  license_type: BRE License
-  license_number: '54535489'
-location_information:
-  address: ''
-  city: ''
-  state: ''
-  zip_code: 
-social_accounts:
-  youtube: ''
-  facebook: ''
-  linkedin: ''
-  instagram: ''
-  twitter: ''
-  pinterest: ''
-  zillow: ''
-  redfin: ''
-  realtor: ''
-  trulia: ''
-  reddit: ''
-  houzz: ''
 primary_company_name: Coffee into Coding
 search_engine_optimization:
   meta_title: CK Designs Kitchen and Bathrooms
@@ -32,11 +8,3 @@ search_engine_optimization:
     GA, and surrounding area, call on CK Designs Kitchen & Bath. We’re your locally
     owned and operated go-to for cabinetry, countertops, hardware, appliances, plumbing
     fixtures, lighting, tile backsplash, tile floor, tile showers, flooring, and more!
-hours:
-  monday: ''
-  tuesday: ''
-  wednesday: ''
-  thursday: ''
-  friday: ''
-  saturday: ''
-  sunday: ''

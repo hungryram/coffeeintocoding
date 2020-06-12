@@ -1,3 +1,86 @@
 {{ define "main" }}
 
+<div class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half is-offset-one-quarter has-text-centered">
+                {{ if .Params.profile }}
+                <img src="{{ .Params.profile }}" alt="{{ .Title }} review" style="object-fit: cover;height:150px;width:150px;border-radius:50%;margin: 0 auto;">
+                {{end }}
+                <div style="margin-top:50px">
+                    <h1 class="title is-4">{{ .Title }}</h1>
+                    <ul class="author-social">
+                    {{ $authorSocial := .Params.social_networks }}
+                        {{ with $authorSocial.facebook }}
+                        <li><a href="{{ . }}" target="_blank" title="Facebook" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-facebook-f"></i></a></li>
+                        {{end}}
+
+                        {{ with $authorSocial.instagram }}
+                        <li><a href="{{ . }}" target="_blank" title="Instagram"><i class="fab fa-instagram" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}></i></a></li>
+                        {{end}}
+
+                        {{ with $authorSocial.linkedin }}
+                        <li><a href="{{ . }}" target="_blank" title="Linkedin" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-linkedin-in"></i></a></li>
+                        {{end}}
+
+                        {{ with $authorSocial.pinterest }}
+                        <li><a href="{{ . }}" target="_blank" title="Pinterest" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-pinterest-p"></i></a></li>
+                        {{end}}
+
+                        {{ with $authorSocial.twitter }}
+                        <li><a href="{{ . }}" target="_blank" title="Twitter" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-twitter"></i></a></li>
+                        {{end}}
+
+                        {{ with $authorSocial.youtube }}
+                        <li><a href="{{ . }}" target="_blank" title="Youtube" {{ if $.Site.Data.design.footer.enable_black_text}}style="color:black"{{else}} style="color:white"{{end}}><i class="fab fa-youtube"></i></a></li>
+                        {{end}}
+
+                        </ul>
+                    <p>{{ .Params.label }} of <a href="{{ .Params.company_link }}" target="_blank" class="secondary-btn">{{ .Params.company_name }}</a></p>
+                    <div class="content">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h2 class="title is-5">List of Blogs</h2>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                {{ range (where $.Site.RegularPages "Type" "blog") }}
+                {{ $authorPosts := .Params.author | urlize }}
+                {{ $authURL := (where $.Site.RegularPages "Type" "author") }}
+
+                {{ $name := print $authorPosts }}
+                {{ $finalURL := print $name }}
+                {{ if eq $finalURL "author/ram-dettmer.md" }}
+                <div class="box">
+                    <div class="columns">
+                        <div class="column is-4">
+                            <figure class="image">
+                                {{ if .Params.featured_image }}
+                                <img src="{{ .Params.featured_image }}" alt="{{ .Title }} review" style="object-fit: cover;margin: 0 auto;">
+                                {{end}}
+                            </figure>
+                        </div>
+                        <div class="column">
+                            <h1 class="title is-5">{{ .Title }}</h1>
+                            <time class="secondary-btn">{{.Date.Format "Jan 2, 2006" }}</time>
+                            <p>{{ .Summary }}</p><br>
+                            <a href="{{ .Permalink }}" class="main-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
 {{ end }}
